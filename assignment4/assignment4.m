@@ -34,6 +34,7 @@ normDay3mean = mean(day3IndMeans); %same but for day 3
 %% Export Results
 %Resizing of variables to be put into table - extra rows of the columns are
 %replaced with "NaN"
+maleIsoIndMeans(13,1) = NaN; 
 femaleIsoIndMeans(13,1) = NaN;
 maleGroupIsoMean(2:13,1) = NaN;
 femaleGroupIsoMean(2:13,1) = NaN;
