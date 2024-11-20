@@ -114,10 +114,8 @@ while userGuess ~= secretNumber %(6) BUG FOUND!! No end to end this while loop, 
 % proofreading.
     if userGuess < secretNumber
         fprintf('Sorry, %d is too low.\n', userGuess);
-        numOfTries = numOfTries + 1;
     elseif userGuess > secretNumber 
         fprintf('Sorry, %d is too high.\n', userGuess);
-        numOfTries = numOfTries + 1;
     elseif numOfTries == 1 && userGuess == secretNumber
 %(10) BUG FOUND!!: "elseif numOfTries == 1" doesn't compare the
 %userGuess to the secretNumber to see if they actually got it on the
@@ -136,9 +134,10 @@ while userGuess ~= secretNumber %(6) BUG FOUND!! No end to end this while loop, 
 % outside of the game loop so I moved it to that location. Found
 % through proofreading.
 
-    end  % of guessing while loop
+    end  % BUG FOUND!! : end of if-else statement originally missing which was found via matlab error.
 
-end % Actually ends the whole while loop for the game
+    numOfTries = numOfTries +1; %new location
+end % of guessing while loop
 
 fprintf('Game Over. Thanks for playing the Guess That Number game.\n\n');
 
